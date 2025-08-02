@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block title %}上传文件 - 健康管理系统{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="fas fa-cloud-upload-alt me-2"></i>上传健康文件
+                </h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="upload-area mb-4">
+                        <i class="fas fa-cloud-upload-alt text-primary" style="font-size: 3rem; margin-bottom: 20px;"></i>
+                        <h5>选择文件</h5>
+                        <p class="text-muted mb-3">支持 PDF、图片、文档等健康相关文件</p>
+                        <input type="file" class="form-control" name="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif,.xls,.xlsx,.csv" required>
+                        <div class="form-text mt-2">
+                            <i class="fas fa-info-circle me-1"></i>
+                            最大文件大小：16MB
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="description" class="form-label">
+                            <i class="fas fa-comment me-2"></i>文件描述（可选）
+                        </label>
+                        <textarea class="form-control" id="description" name="description" rows="3" 
+                                  placeholder="请描述这个文件的内容，例如：体检报告、处方单、健康数据等"></textarea>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-upload me-2"></i>上传文件
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-4">
+                    <h6>
+                        <i class="fas fa-info-circle text-primary me-2"></i>支持的文件类型
+                    </h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-file-pdf text-danger me-2"></i>PDF文档</li>
+                                <li><i class="fas fa-file-word text-primary me-2"></i>Word文档</li>
+                                <li><i class="fas fa-file-image text-success me-2"></i>图片文件</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-file-excel text-success me-2"></i>Excel表格</li>
+                                <li><i class="fas fa-file-csv text-info me-2"></i>CSV数据</li>
+                                <li><i class="fas fa-file-medical text-warning me-2"></i>其他健康文件</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-shield-alt me-2"></i>安全提示
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-success">
+                            <i class="fas fa-check-circle me-2"></i>安全措施
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-lock text-success me-2"></i>文件加密存储</li>
+                            <li><i class="fas fa-user-secret text-success me-2"></i>仅您可访问</li>
+                            <li><i class="fas fa-shield-alt text-success me-2"></i>安全传输</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>注意事项
+                        </h6>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-info-circle text-warning me-2"></i>请勿上传敏感信息</li>
+                            <li><i class="fas fa-clock text-warning me-2"></i>定期备份重要文件</li>
+                            <li><i class="fas fa-trash text-warning me-2"></i>及时删除不需要的文件</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
